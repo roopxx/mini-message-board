@@ -22,4 +22,13 @@ router.get("/", (req, res) => {
   });
 });
 
+router.post("/new", (req, res) => {
+  console.log(req.body);
+  const user = req.body.user;
+  const text = req.body.text;
+  messages.push({ text, user, added: new Date().toLocaleString() });
+
+  res.redirect("/");
+});
+
 module.exports = router;

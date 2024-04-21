@@ -1,0 +1,18 @@
+extends layout
+
+block head
+  title= title
+
+block content
+ form(action="/new", method="POST")
+  fieldset 
+   legend= heading
+   div.name-field
+    label(for="name") Name: 
+    input#name(type="text", name="user" maxLength="20" required)
+   br
+   br
+   div.message-field
+    label(for="text") Message:
+    textarea#text(name="text", rows="5" required) 
+   button.submit(type="submit") Submit 

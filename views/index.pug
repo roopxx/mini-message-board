@@ -1,0 +1,16 @@
+extends layout
+
+block head
+  title= title
+
+block content 
+ h2.heading Messages
+ .message-window
+  each message in messages 
+   div.message-card 
+    p.text= message.text
+    .message-details 
+     p.user= message.user
+     p.date= message.added
+ 
+ a(href="/new"): button.new-message New Message  
